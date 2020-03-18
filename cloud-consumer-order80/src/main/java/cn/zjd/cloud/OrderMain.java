@@ -2,6 +2,8 @@ package cn.zjd.cloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @Description TODO
@@ -9,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @auther by Dong
  */
 @SpringBootApplication
+@EnableEurekaClient
 public class OrderMain
 {
     public static void main(String[] args) {
