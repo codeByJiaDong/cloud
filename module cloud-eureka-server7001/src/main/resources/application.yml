@@ -11,3 +11,4 @@ eureka:
     service-url:
       #设置与Eureka Server 交互的地址查询服务和注册服务都需要依赖这个地址
       defalutZ4 one: http:?/${eureka.instance.hostname}:${server.port}/eureka/
+## 注释一下
