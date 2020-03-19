@@ -21,7 +21,8 @@ public class OrderController
     @Resource
     private RestTemplate restTemplate;
 
-    private final String PREURL = "http://localhost:8001";
+   // private final String PREURL = "http://cloud-providers-service";
+    private final String PREURL = "http://CLOUD-PROVIDERS-SERVICE";
 
     @GetMapping("/query/{id}")
     public CommonResult query(@PathVariable Long id){

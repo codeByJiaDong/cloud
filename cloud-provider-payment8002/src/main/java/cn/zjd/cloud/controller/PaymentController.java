@@ -32,7 +32,6 @@ public class PaymentController
     @Resource
     private DiscoveryClient discoveryClient;
 
-
     @GetMapping("/discovery")
     public Object discovery(){
         //获取所有的微服务
@@ -47,7 +46,6 @@ public class PaymentController
         }
         return this.discoveryClient;
     }
-
 
     @GetMapping("/{id}")
     public CommonResult query(@PathVariable(value = "id") Long id){
