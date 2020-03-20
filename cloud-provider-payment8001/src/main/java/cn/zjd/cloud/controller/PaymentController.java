@@ -34,15 +34,18 @@ public class PaymentController
 
 
     @GetMapping("/discovery")
-    public Object discovery(){
+    public Object discovery()
+    {
         //获取所有的微服务
         List<String> services = discoveryClient.getServices();
-        for (String element : services) {
+        for (String element : services)
+        {
             log.info("*****element:"+element);
         }
         //得到一个具体微服务的所有实例
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PROVIDERS-SERVICE");
-        for (ServiceInstance instance : instances) {
+        for (ServiceInstance instance : instances)
+        {
             log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getUri());
         }
         return this.discoveryClient;
@@ -57,14 +60,23 @@ public class PaymentController
     }
 
     @PostMapping("/save")
-    public CommonResult save(@RequestBody Payment payment){
+    public CommonResult save(@RequestBody Payment payment)
+    {
         int i = paymentService.create(payment);
-        if (i > 0){
+        if (i > 0)
+        {
             log.info("插入成功，结果为"+i);
             return new CommonResult(200L,"插入成功"+port, i);
-        }else {
+        }else
+            {
             log.error("插入失败"+payment);
             return new CommonResult(444L, "插入失败，请重试"+port, null);
-        }
+            }
+    }
+
+    @GetMapping("/payment/lb")
+    public String getPort()
+    {
+        return port;
     }
 }

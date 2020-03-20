@@ -18,7 +18,7 @@ public class ApplicationContextConfig
      * 需要加上 负载均衡的注解 ，这个注解可以通过应用名称来轮询调用服务
      */
     @Bean
-    @LoadBalanced
+    // @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
     }

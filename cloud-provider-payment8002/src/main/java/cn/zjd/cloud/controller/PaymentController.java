@@ -65,4 +65,10 @@ public class PaymentController
             return new CommonResult(444L, "插入失败，请重试"+port, null);
         }
     }
+
+    @GetMapping("/payment/lb")
+    public String getPort()
+    {
+        return port;
+    }
 }
