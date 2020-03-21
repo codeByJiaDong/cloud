@@ -3,7 +3,7 @@ server:
   port: 7002
 spring:
   application:
-    name: cloud-eureka-service
+    name: cloud-eureka-cn.zjd.cloud.service
 eureka:
   instance:
     # hostname: localhost
@@ -14,7 +14,7 @@ eureka:
     lease-expiration-duration-in-seconds: 2
   server:
     # 禁用自我保护
-    enable-self-preservation: true
+    enable-self-preservation: false
     eviction-interval-timer-in-ms: 2000
   client:
     register-with-eureka: false
