@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
  * @auther by Dong
  */
 @RestController
-@RequestMapping("pay")
 @Slf4j
 public class PaymentController
 {
@@ -48,7 +47,7 @@ public class PaymentController
         return this.discoveryClient;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/payment/get/{id}")
     public CommonResult query(@PathVariable(value = "id") Long id){
         Payment payment = paymentService.queryById(id);
         log.info("查询成功，查询信息为"+payment);
